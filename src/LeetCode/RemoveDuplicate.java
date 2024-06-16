@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class RemoveDuplicate {
     public static void main(String[] args) {
-        int[] nums = {1,1,2};
-        System.out.println(removeDuplicates(nums));
+        int[] nums = {0,1,1,2,2};
+        System.out.println(removeDuplicate(nums));
 
     }
 
@@ -28,5 +28,27 @@ public class RemoveDuplicate {
         return k;
 
 
+    }
+
+    public static int removeDuplicate(int[] nums) {
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+    public static int removeDuplicate2(int[] nums) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if(i < nums.length-1 && nums[i]==nums[i+1]) {
+                nums[count] = nums[i];
+                count++;
+            }
+        }
+        return count;
     }
 }
