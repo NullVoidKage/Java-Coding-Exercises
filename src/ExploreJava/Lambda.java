@@ -10,7 +10,7 @@ public class Lambda {
         nameList.forEach(names -> {
 
             names.lines();
-            System.out.println(names.lines());
+            System.out.println(names);
         });
     }
 }

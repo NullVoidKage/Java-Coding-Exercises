@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class PalindromeNumber {
     public static void main(String[] args) {
+        if(palindrome3(100021)) {
+            System.out.println("PALINDROEM");
+        }
         if(palindrome2(1000021)) {
             System.out.println("PALINDROME");
         } else {
@@ -52,6 +55,16 @@ public class PalindromeNumber {
             }
             left++;
             right--;
+        }
+        return true;
+    }
+
+    private static boolean palindrome3(int x) {
+        int[] num;
+        int digits = (int) Math.log10(x) + 1;
+
+        for (int i=digits-1;i>=0;i--) {
+            System.out.println(x);
         }
         return true;
     }

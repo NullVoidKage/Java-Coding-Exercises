@@ -6,7 +6,8 @@ public class ReverseString {
     public static void main(String[] args) {
         String str = "123";
 
-        System.out.println(reverse(str));
+        reverseCowGirl(str);
+        reverse(str);
     }
 
     public static String reverse(String in) {
@@ -23,4 +24,13 @@ public class ReverseString {
         return out.toString();
     }
 
+    public static void reverseCowGirl(String string) {
+
+        int length = string.length();
+        String name="";
+
+        for(int i=length-1;i>=0;i--) {
+            System.out.print(string.charAt(i));
+        }
+    }
 }
