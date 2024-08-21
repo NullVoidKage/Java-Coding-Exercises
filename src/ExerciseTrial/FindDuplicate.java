@@ -13,13 +13,13 @@ public class FindDuplicate {
 
         // Find duplicates using streams
         //                .filter(entry -> entry.getValue() > 1) // Filter entries with count > 1
-        List<String> duplicates = new ArrayList<>(list.stream()
-                .collect(Collectors.groupingBy(e -> e, Collectors.counting())) // Group by element and count occurrences
-                .keySet()); // Collect results into a list
+//        List<String> duplicates = new ArrayList<>(list.stream()
+//                .collect(Collectors.groupingBy(e -> e, Collectors.counting())) // Group by element and count occurrences
+//                .keySet()); // Collect results into a list
 
-        System.out.println("Duplicates: " + duplicates);
-        List<Integer> nums = Arrays.asList(1, 1,4, 2,  3);
-        int[] arr = {1, 11, 2, 3, 2};
+//        System.out.println("Duplicates: " + duplicates);
+//        List<Integer> nums = Arrays.asList(1, 1,4, 2,  3);
+        int[] arr = {1, 11, 2, 3, 2, 3, 3};
 //        List<Integer> list = getRepeatingNumbers(nums);
         duplicate(arr);
     }
@@ -38,13 +38,16 @@ public class FindDuplicate {
         return listRepeat;
     }
 
-    public static void duplicate(int[] nums) {
+    public static int duplicate(int[] nums) {
+        int count = 0;
         for(int i=0;i<nums.length;i++){
             for(int j = i+1;j<nums.length;j++) {
                 if(nums[i]==nums[j]){
-                    System.out.println("DUPLICATE " + nums[i] + " | " + nums[j]);
+                    count++;
                 }
             }
         }
+        System.out.println(count);
+        return count;
     }
 }
