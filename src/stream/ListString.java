@@ -1,6 +1,7 @@
 package stream;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ListString {
@@ -80,15 +81,15 @@ public class ListString {
         List<String> strings2 = new ArrayList<>(Arrays.asList("ZebrA", "ManGo", "Afaik", "Dick", null, "", " Dick", "{}sa"));
 
         List<String> stringList = new ArrayList<>();
-
-        stringList = strings.stream()
-                .filter(Objects::nonNull)
-                .map(s -> s.trim())
-                .filter(s -> !s.isEmpty())
-                .map(s -> s.substring(0,1).toLowerCase() + s.substring(1).toUpperCase())
-                .distinct()
-                .sorted()
-                .collect(Collectors.toList());
+//
+//        stringList = strings.stream()
+//                .filter(Objects::nonNull)
+//                .map(String::trim)
+//                .map(s -> !s.isEmpty())
+//                .map(s -> s.substring(0,1).toLowerCase() + s.substring(1).toUpperCase())
+//                .distinct()
+//                .sorted()
+//                .collect(Collectors.toList());
 
         List<List<String>> lists = Arrays.asList(
                 Arrays.asList("Jeff", "Bezos"),
@@ -107,6 +108,27 @@ public class ListString {
         System.out.println(lists1);
         String name = "dasdsad ";
 
+    }
+// try {
+//        // Your transactional code here
+//        transactionManager.commit(status);
+//    } catch (Exception e) {
+//        transactionManager.rollback(status);
+//        throw e;
+//    }
+
+
+    private static void sample(List<String> strings){
+        List<String> stringList = new ArrayList<>();
+
+        stringList = strings.stream()
+                .filter(Objects::nonNull)
+                .filter(s->!s.isEmpty())
+                .map(String::trim)
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+        String s = "SSS";
     }
 }
 

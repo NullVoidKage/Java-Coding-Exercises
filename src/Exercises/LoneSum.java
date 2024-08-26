@@ -7,14 +7,11 @@ import java.util.Set;
 public class LoneSum {
     public static void main(String[] args) {
         List<Integer> list = List.of(1, 2, 3, 4, 1, 1);
-        int[] arr = {1, 1, 3, 3, 4};
-        twoSum(arr);
-//        loneSum(list);
+       loneSum(list);
     }
 
     public static int loneSum(List<Integer> list) {
         Set<Integer> integerSet = new HashSet<>(list);
-        String name = "SAAA";
         int sum = 0;
         for (Integer set: integerSet){
              sum += set;

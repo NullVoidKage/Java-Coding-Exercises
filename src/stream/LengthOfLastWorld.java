@@ -19,19 +19,16 @@ public class LengthOfLastWorld {
 
     public static int lengthOfLastWordOptimize(String s) {
         // Trim the input string to remove leading and trailing spaces
-        System.out.println(s);
         s = s.trim();
-        System.out.println(s);
         // Find the index of the last space in the string
         int lastSpaceIndex = s.lastIndexOf(' ');
+        System.out.println(lastSpaceIndex);
         System.out.println(lastSpaceIndex);
         // If there's no space, return the length of the entire string
         if (lastSpaceIndex == -1) {
             return s.length();
         }
-        System.out.println(s.length());
-        System.out.println(lastSpaceIndex);
-        System.out.println(s.length() - lastSpaceIndex - 1);
+
 
         // Return the length of the last word
         return s.length() - lastSpaceIndex - 1;
